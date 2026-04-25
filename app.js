@@ -22,8 +22,7 @@ function signIn() {
 }
 
 async function loadFolder(folderId) {
-  document.getElementById('loading').style.display = 'block';
-  document.getElementById('file-list').innerHTML = '<div id="loading">불러오는 중...</div>';
+  document.getElementById('file-list').innerHTML = '<div style="color:#aaa;padding:1rem;font-size:13px">불러오는 중...</div>';
 
   const q = `'${folderId}' in parents and trashed=false and (mimeType contains 'audio' or mimeType='application/vnd.google-apps.folder')`;
   const url = `https://www.googleapis.com/drive/v3/files?q=${encodeURIComponent(q)}&fields=files(id,name,mimeType)&orderBy=folder,name&pageSize=500`;
